@@ -19,8 +19,8 @@
     --border-color-button-portfolio: #E7E9FC;
     --background-color-links-icon-footer-hover-focus:#31D0AA;
     --transition-duration: 250ms;
-    --transition-function:cubic-bezier(0.4, 0, 0.2, 1);
-    --accent-color-hover-x:  #404BBF;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --background-color-x:  #404BBF;
 }
 
 
@@ -70,10 +70,8 @@ body {
     border-bottom: 1px solid #E7E9FC;
     padding-top: 24px;
     padding-bottom: 24px;
-    position: absolute;
     width: 100%;
-    top:0;
-    left:0;
+   
 }
 
 .box-header{
@@ -121,6 +119,7 @@ height: 4px;
 border-radius: 2px;
 background-color: var(--background-color-button-index);
 content: '';
+transform:translateY(27px) ;
 }
 
 
@@ -134,7 +133,7 @@ content: '';
     letter-spacing: 0.02em;
     text-decoration: none;
     color: var(--color-text-primary);
-    transition: color var(--transition) var(--transition-duration);
+    transition: color var(--transition) ;
 }
 
 
@@ -156,7 +155,7 @@ content: '';
     letter-spacing: 0.02em;
     color: var(--color-text-original);
     text-decoration: none;
-    transition: color var(--transition)  var(--transition-duration);
+    transition: color var(--transition);
     
 }
 
@@ -168,9 +167,7 @@ color:var(--color-text-hover-link);
     margin-left: 40px;
 }
 
-.modal-close-btn-icon{
-  color: var();  
-}
+
 /*main*/
 
 
@@ -216,6 +213,7 @@ color:var(--color-text-hover-link);
     cursor: pointer;
     padding: 16px 32px;
     border: none;
+    transition: background-color var(--transition);
 }
 
 
@@ -374,6 +372,7 @@ margin-right: 24px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: background-color var(--transition);
 }
 
 .social-icon{
@@ -422,6 +421,7 @@ fill: #F4F4FD;
     display: flex;
     justify-content: center;
     align-items: center;
+   transition: border-color var(--transition);
 }
 
 .list-customer-links:hover,
@@ -438,6 +438,7 @@ fill: #F4F4FD;
     width: 104px;
     height: 56px;
     fill: #AFB1B8;
+    transition: fill var(--transition);
 }
 
 /*footer*/
@@ -487,12 +488,14 @@ display: flex;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    transition: background-color var(--transition);
 }
 .links-icon-footer:focus, .links-icon-footer:hover{
     background-color: var(--background-color-links-icon-footer-hover-focus);
 }
 .icons-footer{
     fill:#F4F4FD ;
+   
 }
 .text-content-footer{
     color:#FFFFFF ;
@@ -507,12 +510,13 @@ display: flex;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     z-index: 100;
-    transition: ;
+    transition: visibility var(--transition), opacity var(--transition);
 }
    .backdrop.is-hidden{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+
    }
 .modal{
     width: 528px;
@@ -528,7 +532,7 @@ display: flex;
     position:absolute;
     top: 24px;
     right: 24px;
-    background-color: transparent;
+    
     border:1px solid #000000 ;
     border-radius: 50%;
     padding: 0;
@@ -537,17 +541,24 @@ display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity var(--transition); visibility: var(--transition);
+    transition:  
+
+}
+
+.modal-close-btn-icon{
+    transition: fill var(--transition);
 }
 .modal-closed-btn:hover,
 .modal-closed-btn:focus{
     border-color: var(--accent-color-hover-x);
-transition: border-color var(--background-color-primary); visibility: var(--transition);
+    transition: border-color var(--background-color-primary);
+     background-color:var(--background-color-x);
 }
 
 .modal-closed-btn:hover .modal-close-btn-icon,
 .modal-closed-btn:focus .modal-close-btn-icon{
     fill: var(--color-text-button-portfolio-hover);
+  
 }
 
 /*portfolio*/
@@ -569,7 +580,6 @@ transition: border-color var(--background-color-primary); visibility: var(--tran
     margin-right: 24px;
 }
 
-
 .button-portfolio {
     font-weight: 500;
     font-size: 16px;
@@ -581,12 +591,12 @@ transition: border-color var(--background-color-primary); visibility: var(--tran
     border-radius: 4px;
     cursor: pointer;
     padding: 12px 24px;
+    transition:box-shadow var(--transition), color var(--transition),background-color var(--transition) ;
 }
 
 
 .button-portfolio:hover,.button-portfolio:focus,.button-portfolio:active {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
     color: var(--color-text-button-portfolio-hover);
     background-color: var(--background-color-button-portfolio-hover);
 }
@@ -644,7 +654,8 @@ transition: border-color var(--background-color-primary); visibility: var(--tran
     width: 100%;
     height: 100%;
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition)
+    
 }
 .child-box-photo-portfolio{
     margin-bottom: 48px;
