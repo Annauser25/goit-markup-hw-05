@@ -541,7 +541,7 @@ display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition:  
+     
 
 }
 
@@ -551,8 +551,7 @@ display: flex;
 .modal-closed-btn:hover,
 .modal-closed-btn:focus{
     border-color: var(--accent-color-hover-x);
-    transition: border-color var(--background-color-primary);
-     background-color:var(--background-color-x);
+    background-color: var(--background-color-x);
 }
 
 .modal-closed-btn:hover .modal-close-btn-icon,
